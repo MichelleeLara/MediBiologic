@@ -1,0 +1,87 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Card from '@/components/Card.astro';
+import NavBar from '@/components/NavBar.astro';
+import Hero from '@/sections/Hero.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<NavBar/>
+	<main class="overflow-hidden ">
+		<Hero/>
+
+		<section class="bg-[#f3f8ff] h-min relative overflow-hidden flex flex-col gap-20 -top-52 px-16 py-14 rounded-xl mx-12 md:flex-row md:-top-44">
+			<div class="flex flex-col gap-1.5 md:w-[53.33%]">
+				<strong class="text-tertiary font-inter mb-2">Citas</strong>
+				<h2 class="text-3xl font-bold">Cuidamos su salud, nuestra misión es su bienestar.</h2>
+				<p class="text-[#666E82]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis amet autem facerm.</p>
+			</div>
+			<div class="flex flex-col gap-1.5 md:w-1/3">
+				<div class="p-2 rounded-full bg-[#1c74b7cc] shadow-xl w-fit mb-3">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="white" fill="none">
+						<path d="M14.5 9C14.5 10.3807 13.3807 11.5 12 11.5C10.6193 11.5 9.5 10.3807 9.5 9C9.5 7.61929 10.6193 6.5 12 6.5C13.3807 6.5 14.5 7.61929 14.5 9Z" stroke="currentColor" stroke-width="1.5" />
+						<path d="M18.2222 17C19.6167 18.9885 20.2838 20.0475 19.8865 20.8999C19.8466 20.9854 19.7999 21.0679 19.7469 21.1467C19.1724 22 17.6875 22 14.7178 22H9.28223C6.31251 22 4.82765 22 4.25311 21.1467C4.20005 21.0679 4.15339 20.9854 4.11355 20.8999C3.71619 20.0475 4.38326 18.9885 5.77778 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M13.2574 17.4936C12.9201 17.8184 12.4693 18 12.0002 18C11.531 18 11.0802 17.8184 10.7429 17.4936C7.6543 14.5008 3.51519 11.1575 5.53371 6.30373C6.6251 3.67932 9.24494 2 12.0002 2C14.7554 2 17.3752 3.67933 18.4666 6.30373C20.4826 11.1514 16.3536 14.5111 13.2574 17.4936Z" stroke="currentColor" stroke-width="1.5" />
+					</svg>
+				</div>
+				<h2 class="text-xl font-semibold">Visitanos en</h2>
+				<p class="text-[#666E82]">Diego Rivera 2351-604, Zona Urbana Rio Tijuana, 22010 Tijuana, B.C</p>
+				<a href="" class="text-tertiary font-bold text-sm flex items-center text-end gap-1">
+					<p class="mt-1">Abrir en google maps</p>
+					<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-google-maps"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" /><path d="M6.428 12.494l7.314 -9.252" /><path d="M10.002 7.935l-2.937 -2.545" /><path d="M17.693 6.593l-8.336 9.979" /><path d="M17.591 6.376c.472 .907 .715 1.914 .709 2.935a7.263 7.263 0 0 1 -.72 3.18a19.085 19.085 0 0 1 -2.089 3c-.784 .933 -1.49 1.93 -2.11 2.98c-.314 .62 -.568 1.27 -.757 1.938c-.121 .36 -.277 .591 -.622 .591c-.315 0 -.463 -.136 -.626 -.593a10.595 10.595 0 0 0 -.779 -1.978a18.18 18.18 0 0 0 -1.423 -2.091c-.877 -1.184 -2.179 -2.535 -2.853 -4.071a7.077 7.077 0 0 1 -.621 -2.967a6.226 6.226 0 0 1 1.476 -4.055a6.25 6.25 0 0 1 4.811 -2.245a6.462 6.462 0 0 1 1.918 .284a6.255 6.255 0 0 1 3.686 3.092z" /></svg>
+				</a>
+			</div>
+			<div class="flex flex-col gap-1.5 md:w-[25%]">
+				<div class="p-2 rounded-full bg-[#1c74b7cc] shadow-xl w-fit mb-3">
+					<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="white"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-phone-call"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /><path d="M15 7a2 2 0 0 1 2 2" /><path d="M15 3a6 6 0 0 1 6 6" /></svg>
+				</div>
+				<h2 class="text-xl font-semibold">Contáctanos en</h2>
+				<div class="flex flex-col gap-0.5 mt-2 mb-3">
+					<p class="text-[#666E82]">Número de telefono</p>
+					<a href="" class="font-bold text-sm flex items-center text-end gap-2 mt-1.5">
+						<p class="mt-1">(664) 686-3177</p>
+						<img src="Mexico_flag.svg" class="w-8 rounded-[4px] shadow-sm" alt="">
+					</a>
+					<a href="" class="font-bold text-sm flex items-center text-end gap-2 mt-1.5">
+						<p class="mt-1">(619) 270 5525</p>
+						<img src="EUA_flag.svg" class="w-8 rounded-[4px] shadow-sm" alt="">
+					</a>
+				</div>
+				<hr>
+				<p class="text-[#666E82] mt-3">Correo electrónico</p>
+				<a href="" class="font-bold text-sm flex items-center text-end gap-2">
+					<p class="text-sm">info@medibiologica.com</p>
+				</a>
+
+			</div>
+			<img src="cross3.svg" class="absolute left-[-1rem] bottom-[-3rem] w-[30rem] opacity-[0.06]" alt="">
+			<img src="cross3.svg" class="absolute left-[29.5rem] bottom-[-4rem] w-[20rem] opacity-[0.06]" alt="">
+		</section>
+
+		<section class="h-min pb-20 flex items-center">
+			<div class="mx-5 max-w-screen-lg flex gap-4 flex-col">
+				<p class="text-sm font-semibold text-tertiary">Acerca de nosotros</p>
+				<h2>La experiencia en nuestro campo </h2>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum magnam ex aliquam accusantium doloribus sit sunt, corporis at delectus, veniam odio sed perspiciatis recusandae. Quibusdam iusto omnis commodi iure quo.</p>
+
+				<div class="">
+					<article class="">
+						<div>13, 998 <span class="text-tertiary"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-k"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4l0 16" /><path d="M7 12h2l8 -8" /><path d="M9 12l8 8" /></svg></span></div>
+						<p>Tratamientos</p>
+					</article>
+					<article class="">
+						<div>1,211 <span></span></div>
+						<p>Tratamientos</p>
+					</article>
+
+				</div>
+			</div>
+		</section>
+		<!-- <img src="gout.svg" class="absolute w-[40rem] h-[80rem] opacity-25 top-[60rem] right-[-13.9rem] rotate-[9.4deg]" alt=""> -->
+
+		
+
+	</main>
+</Layout>
+
+

@@ -1,0 +1,55 @@
+---
+import CtaPrimary from "@/components/Cta_primary.astro"
+import { getI18N } from "@/i18n/"
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+---
+<section class="h-min flex items-center justify-center relative ">
+    <div class="mx-5 max-w-screen-xl w-full flex gap-16 flex-col md:flex-row ">
+        <article class="flex gap-6 flex-col max-w-[600px]">
+            <p class="font-semibold text-tertiary">{i18n.About_Section.SUBTITLE}</p>
+            <h2 class="text-4xl font-semibold">{i18n.About_Section.TITLE}</h2>
+            <p class="text-gray-600">{i18n.About_Section.DESCRIPTION}</p>
+    
+            <div class="flex gap-7 flex-wrap">
+                {i18n.About_Section.STATS.map((stat) => (
+                    <article class="flex flex-col gap-0.5 ">
+                        <div class="flex text-3xl items-center font-extrabold gap-2">
+                            {stat.VALUE} 
+                            {stat.SUFFIX && <span class="font-extrabold text-tertiary font-intern">{stat.SUFFIX}</span>}
+                            {!stat.SUFFIX && 
+                                <span class="font-extrabold text-tertiary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" color="current" fill="none">
+                                        <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="4.3" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            }
+                        </div>
+                        <p class="text-sm text-gray-700">{stat.LABEL}</p>
+                    </article>
+                ))}
+            </div>
+
+            <hr>
+            <p class="md:max-w-[500px] font-bold text-sm flex flex-col gap-1.5">"{i18n.About_Section.QUOTE.TEXT}" <br> 
+                <span class="text-xs flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M7.5 17C9.8317 14.5578 14.1432 14.4428 16.5 17M14.4951 9.5C14.4951 10.8807 13.3742 12 11.9915 12C10.6089 12 9.48797 10.8807 9.48797 9.5C9.48797 8.11929 10.6089 7 11.9915 7C13.3742 7 14.4951 8.11929 14.4951 9.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    {i18n.About_Section.QUOTE.AUTHOR}
+                </span>
+            </p>
+    
+            <div class="text-white mt-4 md:w-fit">
+                <CtaPrimary color="#1c73b7"/>
+            </div>
+        </article>
+        <div class="relative bg-resd-50 flex items-center justify-center ">
+            <img src={i18n.About_Section.IMAGES.DOCTOR.SRC} alt={i18n.About_Section.IMAGES.DOCTOR.ALT} class="w-[20rem] hidden md:block relative rounded-tr-[5rem] md:w-[25rem] shadow-md lg:w-3/4 lg:right[0rem] xl:right-[-8rem]">
+            <img src={i18n.About_Section.IMAGES.GLOVES.SRC} alt={i18n.About_Section.IMAGES.GLOVES.ALT} class="w-[18rem] md:absolute md:left-[-7rem] rounded-bl-[5rem] md:top-64 rounded-md md:w-[20rem] shadow-lg lg:left-[-4rem] lg:top-48 xl:left-[4rem]">
+        </div>
+    </div>
+    <img src={i18n.About_Section.IMAGES.GOUT.SRC} alt={i18n.About_Section.IMAGES.GOUT.ALT} class="w-[50rem] absolute left-0 rotate-180 top-8 -z-10">
+</section>

@@ -1,0 +1,35 @@
+---
+interface Props {
+	title: string;
+}
+import { ViewTransitions } from "astro:transitions"
+import { getLangFromUrl } from "@/i18n/utils"
+import '@fontsource/poppins';
+import '@fontsource-variable/inter-tight';
+
+// const { title } = Astro.props;
+const { description, title } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style>
+	body {
+  font-family: 'Poppins', sans-serif;
+}
+	
+</style>

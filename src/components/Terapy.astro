@@ -1,0 +1,21 @@
+---
+const { icon: IconTerapy , nameTerapy, desc } = Astro.props
+---
+
+
+<div class="bg-white p-8 flex flex-col gap-3 w-full rounded-xl group cursor-pointer" style="box-shadow: 3px 0 20px 0 rgba(0, 0, 0, 0.1);">
+    <div class="py-2 px-3 bg-tertiary bg-opacity-15 w-fit rounded-xl text-tertiary transition-all duration-200 group-hover:scale-110 group-hover:-translate-y-3">
+        <IconTerapy/>
+    </div>
+    <h3 class="text-xl font-semibold transition-all duration-500 group-hover:text-tertiary">{nameTerapy}</h3>
+    <p class="text-gray-600">{desc}</p>
+    <button class="flex gap-2 items-center mt-3 text-sm transition-all duration-300  group-hover:text-tertiary">
+        Leer más 
+        <span>
+            <svg class="rotate-90 transition-all duration-200 group-hover:translate-x-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="current" fill="none">
+                <path d="M12 4L12 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 8.99996C17 8.99996 13.3176 4.00001 12 4C10.6824 3.99999 7 9 7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>        
+        </span>
+    </button>
+</div>

@@ -1,0 +1,92 @@
+{
+	"Home": {
+		"HERO_SUBTITLE": "Dr. Ricardo Dueñas",
+		"HERO_TITLE": "Medicina Biológica en Tijuana",
+		"HERO_PARAGRAPH": "Descubre la excelencia en tratamientos de Medicina Biológica en Tijuana. Nuestros expertos integran lo mejor de la medicina tradicional y natural para ofrecerte un enfoque personalizado que revitaliza tu salud de manera integral.",
+		"HERO_CTA_PRI": "Agenda una cita",
+		"HERO_CTA_SEC": "Nuestras especialidades"
+	},
+	"Home_Directory": {
+		"DIRECTORY_SUBTITLE": "Citas",
+		"DIRECTORY_TITLE": "Cuidamos su salud, nuestra misión es su bienestar.",
+		"DIRECTORY_TITLE_LOCATION": "Visitanos en",
+		"DIRECTORY_LOCATION": "Diego Rivera 2351-604, Zona Urbana Rio Tijuana, 22010 Tijuana, B.C",
+		"DIRECTORY_BUTTON": "Abrir en google maps",
+		"DIRECTORY_TITLE_CONTACT": "Contáctanos en",
+		"DIRECTORY_SUBTITLE_NUMBER_CONTACT": "Número de telefono",
+		"DIRECTORY_SUBTITLE_EMAIL_CONTACT": "Correo electrónico"
+	},
+	"About_Section": {
+    "SUBTITLE": "Acerca de nosotros",
+    "TITLE": "La experiencia en nuestro campo",
+    "DESCRIPTION": "Con más de dos décadas de experiencia en medicina biológica, nuestro enfoque integral no solo trata síntomas, sino que revitaliza el cuerpo en su totalidad, mejorando significativamente la calidad de vida de nuestros pacientes.",
+    "STATS": [
+      {
+        "VALUE": "20",
+        "LABEL": "Años de experiencia"
+      },
+      {
+        "VALUE": "13, 998",
+        "SUFFIX": "K",
+        "LABEL": "Clientes satisfechos"
+      }
+    ],
+    "QUOTE": {
+      "TEXT": "Sigo soñando con el futuro, con una vida larga y saludable",
+      "AUTHOR": "Patrck Swayze"
+    },
+    "IMAGES": {
+      "DOCTOR": {
+        "SRC": "/doctor.webp",
+        "ALT": "Doctor"
+      },
+      "GLOVES": {
+        "SRC": "/gloves.webp",
+        "ALT": "Guantes médicos"
+      },
+      "GOUT": {
+        "SRC": "/gout.svg",
+        "ALT": "Decoración"
+      }
+    }
+  },
+	"Treatments_Section": {
+		"SECTION_SUBTITLE": "Intervenciones para la salud",
+		"SECTION_TITLE": "Diferentes tipos de tratamientos para una mejor calidad de vida",
+		"SECTION_CTA": "Ver todos",
+		"TREATMENTS": [
+		  {
+			"name": "Terapia de Quelación",
+			"description": "Administrar EDTA intravenoso para tratar enfermedades causadas por depósitos de calcio y metales pesados en las arterias."
+		  },
+		  {
+			"name": "Ozonoterapia",
+			"description": "Aplicar ozono terapéutico con un generador medicinal para tratar enfermedades crónicas y degenerativas, especialmente problemas circulatorios, digestivos y osteoarticulares."
+		  },
+		  {
+			"name": "Terapia vitamínica intravenosa",
+			"description": "Administrar altas concentraciones de vitaminas y minerales por vía intravenosa para mejorar el funcionamiento integral del organismo."
+		  },
+		  {
+			"name": "Terapia Neural",
+			"description": "La Terapia Neural trata patologías dolorosas causadas por trastornos en el sistema eléctrico del cuerpo, específicamente campos de interferencia."
+		  },
+		  {
+			"name": "Infusión de Vitamina C",
+			"description": "La terapia intravenosa de vitamina C en alta dosis es un excelente antiinflamatorio para patologías crónicas del sistema inmunológico, infecciones y cáncer."
+		  },
+		  {
+			"name": "Oncología integrativa",
+			"description": "En pacientes con quimioterapia y radioterapia, se combina una desintoxicación programada con antioxidantes y vitaminas para eliminar químicos, cuidar el sistema inmunológico y reducir los efectos secundarios físicos y emocionales."
+		  },
+		  {
+			"name": "Inmunoterapia autologa",
+			"description": "La inmunoterapia autóloga trata cáncer y enfermedades autoinmunes activando las células del sistema inmunológico del paciente."
+		  },
+		  {
+			"name": "Medicina ortomolecular",
+			"description": "Es parte de la medicina de rehabilitación celular para restablecer el equilibrio bioquímico del cuerpo. Nutrientes y otros elementos esenciales actúan como un sistema integrado; las enfermedades indican desequilibrios."
+		  }
+		]
+	  }
+}

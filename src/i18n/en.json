@@ -1,0 +1,92 @@
+{
+	"Home": {
+	"HERO_SUBTITLE": "Dr. Ricardo Dueñas",
+	"HERO_TITLE": "Biological Medicine in Tijuana",
+	"HERO_PARAGRAPH": "Discover excellence in Biological Medicine treatments in Tijuana. Our experts integrate the best of traditional and natural medicine to offer you a personalized approach that revitalizes your health comprehensively.",
+	"HERO_CTA_PRI": "Schedule an appointment",
+	"HERO_CTA_SEC": "Our specialties"
+	},
+	"Home_Directory": {
+	"DIRECTORY_SUBTITLE": "Appointments",
+	"DIRECTORY_TITLE": "We care for your health, our mission is your well-being.",
+	"DIRECTORY_TITLE_LOCATION": "Visit us at",
+	"DIRECTORY_LOCATION": "Diego Rivera 2351-604, Zona Urbana Rio Tijuana, 22010 Tijuana, B.C",
+	"DIRECTORY_BUTTON": "Open in Google Maps",
+	"DIRECTORY_TITLE_CONTACT": "Contact us at",
+	"DIRECTORY_SUBTITLE_NUMBER_CONTACT": "Phone number",
+	"DIRECTORY_SUBTITLE_EMAIL_CONTACT": "Email address"
+	},
+	"About_Section": {
+    "SUBTITLE": "About us",
+    "TITLE": "Expertise in our field",
+    "DESCRIPTION": "With over two decades of experience in biological medicine, our comprehensive approach not only treats symptoms but revitalizes the body as a whole, significantly improving our patients' quality of life.",
+    "STATS": [
+      {
+        "VALUE": "20",
+        "LABEL": "Years of experience"
+      },
+      {
+        "VALUE": "13,998",
+        "SUFFIX": "K",
+        "LABEL": "Satisfied clients"
+      }
+    ],
+    "QUOTE": {
+      "TEXT": "I keep dreaming of the future, of a long and healthy life",
+      "AUTHOR": "Patrick Swayze"
+    },
+    "IMAGES": {
+      "DOCTOR": {
+        "SRC": "/doctor.webp",
+        "ALT": "Doctor"
+      },
+      "GLOVES": {
+        "SRC": "/gloves.webp",
+        "ALT": "Medical gloves"
+      },
+      "GOUT": {
+        "SRC": "/gout.svg",
+        "ALT": "Decoration"
+      }
+    }
+  },
+  "Treatments_Section": {
+    "SECTION_SUBTITLE": "Health interventions",
+    "SECTION_TITLE": "Different types of treatments for a better quality of life",
+    "SECTION_CTA": "View all",
+    "TREATMENTS": [
+      {
+        "name": "Chelation Therapy",
+        "description": "Administering intravenous EDTA to treat diseases caused by calcium deposits and heavy metals in the arteries."
+      },
+      {
+        "name": "Ozone Therapy",
+        "description": "Applying therapeutic ozone with a medicinal generator to treat chronic and degenerative diseases, especially circulatory, digestive, and osteoarticular problems."
+      },
+      {
+        "name": "Intravenous Vitamin Therapy",
+        "description": "Administering high concentrations of vitamins and minerals intravenously to improve the overall functioning of the body."
+      },
+      {
+        "name": "Neural Therapy",
+        "description": "Neural Therapy treats painful conditions caused by disorders in the body's electrical system, specifically interference fields."
+      },
+      {
+        "name": "Vitamin C Infusion",
+        "description": "High-dose intravenous vitamin C therapy is an excellent anti-inflammatory for chronic pathologies of the immune system, infections, and cancer."
+      },
+      {
+        "name": "Integrative Oncology",
+        "description": "In patients undergoing chemotherapy and radiotherapy, a programmed detoxification is combined with antioxidants and vitamins to eliminate chemicals, care for the immune system, and reduce physical and emotional side effects."
+      },
+      {
+        "name": "Autologous Immunotherapy",
+        "description": "Autologous immunotherapy treats cancer and autoimmune diseases by activating the patient's immune system cells."
+      },
+      {
+        "name": "Orthomolecular Medicine",
+        "description": "It is part of cellular rehabilitation medicine to restore the body's biochemical balance. Nutrients and other essential elements act as an integrated system; diseases indicate imbalances."
+      }
+    ]
+  }
+}
