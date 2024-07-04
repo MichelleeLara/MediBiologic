@@ -2,17 +2,36 @@
 import Terapy from "@/components/Terapy.astro";
 import EUAFlag from "@/components/icons/EUA_flag.astro";
 import Icon_Terapy from '@/components/icons/Icon_Terapy.astro'
+import Icon_Ozono from '@/components/icons/Icon_Ozono.astro'
 import CtaPrimary from "@/components/Cta_primary.astro"
 import { getI18N } from "@/i18n/"
+import OrtoMedic from '@/components/icons/OrtoMedic.astro'
+import Serum from "@/components/icons/Serum.astro";
+import Vitamin from "@/components/icons/Vitamin.astro";
+import Intra from "@/components/icons/Intra.astro";
+import Oncology from "@/components/icons/Oncology.astro";
+
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
+
+const IconMap = {
+    'Terapia de Quelación' : Serum,
+    "Ozonoterapia": Serum,
+    "Terapia vitamínica intravenosa": Intra,
+    "Infusión de Vitamina C": Vitamin,
+    "Terapia Neural": Intra,
+    "Oncología integrativa": Oncology,
+    "Inmunoterapia autologa": Serum,
+    "Medicina ortomolecular": OrtoMedic,
+
+}
 ---
 
-<section class="h-min flex items-center justify-center relative py-[230px]">
+<section class="h-min flex items-center justify-center relative py-[230px] lg:pt-[300px]">
     <div class="mx-5 max-w-screen-xl w-full flex flex-col gap-10 md:flex-row">
         
-        <div class="flex flex-col gap-3 w-5/6 h-fit md:sticky top-12 transition-all">
+        <div class="flex flex-col gap-3 wfu md:w-5/6 h-fit md:sticky top-12 transition-all">
             <p class="font-semibold text-tertiary">{i18n.Treatments_Section.SECTION_SUBTITLE}</p>
             <h2 class="text-4xl font-semibold">{i18n.Treatments_Section.SECTION_TITLE}</h2>
             <p class="text-gray-600 flex gap-2 mt-2">{i18n.Treatments_Section.SECTION_CTA} <span class=""><svg class="rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#4b5563" fill="none">
@@ -27,12 +46,13 @@ const i18n = getI18N({ currentLocale })
         <div class="flex w-full flex-col gap-9 lg:flex-row">
             <article class="flex flex-col gap-9 ">
                 {i18n.Treatments_Section.TREATMENTS.slice(0, 4).map((treatment) => (
-                    <Terapy icon={Icon_Terapy} nameTerapy={treatment.name} desc={treatment.description}/>
+                    <Terapy  icon={IconMap[treatment.name]  || Icon_Terapy}  nameTerapy={treatment.name} desc={treatment.description}/>
                 ))}
             </article>
             <article class="hidden md:flex flex-col gap-9 lg:mt-24">
                 {i18n.Treatments_Section.TREATMENTS.slice(4).map((treatment) => (
-                    <Terapy icon={Icon_Terapy} nameTerapy={treatment.name} desc={treatment.description}/>
+                    <Terapy  icon={IconMap[treatment.name] || Icon_Terapy}  nameTerapy={treatment.name} desc={treatment.description}/>
+                    // <Terapy icon={Icon_Terapy} nameTerapy={treatment.name} desc={treatment.description}/>
                 ))}
             </article>
         </div>

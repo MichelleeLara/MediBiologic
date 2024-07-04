@@ -1,0 +1,86 @@
+---
+import Facebook from '@/components/icons/facebook.astro'
+import Instagram from '@/components/icons/instagram.astro'
+import Whatsapp from '@/components/icons/whatsapp.astro'
+
+
+---
+<section id="Contacto" class="bg-[#13182f] rounded-tl-[2.5rem] rounded-tr-[2.5rem] w-full h-min min-h-full flex items-center flex-col justify-center pt-40 relative top-[-10srem] z-20 ">
+    <div class="mx-5 w-full relative flex max-w-screen-xl flex-col gap-10 lg:grid lg:grid-cols-4 z-50">
+        <article class="mx-5 flex flex-col justify-start items-start gap-7 w-full xl:mx-0">
+            <div class="relative z-50 flex items-center justify-center gap-2">
+                <img src="/logo_medicaBio.svg" class="w-52 aspect-video" alt="Logo de la empresa.">
+            </div>
+            <p class="mr-5 text-white text-left sm:max-w-[450px]">
+                Descrubre tu habilidad o mejora en el tocho bandera. <span class="text-white opacity-85">Tenemos un equipo que te apoyara </span> y brindara su ayuda para tus metas personales y deportivas. 💪🏽</p>
+        </article>
+        <article class="mx-5 flex flex-col justify-start lg:mt-8 items-start gap-2 w-full lg:items-end xl:mx-0">
+          
+            <p class="text-white text-xl lg:text-end left-[-2.6rem] lg:relative lg:w-full">Navegación</p>
+            <ul class="flex flex-col gap-2 relative mr-4">
+                <li class="text-white text-lg">
+                    <a aria-label="Enlace al incio de la página" href="#">Inicio</a>
+                </li>
+                <li class="text-white text-lg">
+                    <a aria-label="Enlace al incio de la página" href="/nosotros">Nosotros</a>
+                </li>
+                <li class="text-white text-lg">
+                    <a aria-label="Enlace al incio de la página" href="#Propuesta">Productos</a>
+                </li>
+                <li class= "hover:text-black hover:font-medium transition-all duration-300 relative z-50 border-2 border-primary bg-primary px-3 py-1.5 rounded-lg text-white hover:bg-transparent backdrop-blur-md cursor-pointer">
+                    <a aria-label="Enlace al incio de la página" href="#Contacto">Entrenar ahora</a>
+                </li>
+            </ul>    
+        </article>
+        <article class="mx-5 flex flex-col justify-start lg:mt-8 items-start gap-2 w-full lg:items-end xl:mx-0">
+          
+            <p class="text-white text-xl lg:text-end left-[-5.5rem] lg:relative lg:w-full">Horarios</p>
+            <article class="flex flex-col gap-2 relative mr-4 text-balance">
+                <div class="text-white t">
+                    <p>Lun a Jue <span class="text-xs font-bold">( 8pm-10pm )</span></p>
+                </di>
+                
+                </li>
+            </article>    
+            <p class="text-white text-xl lg:text-end left-[-6.4rem] lg:relative lg:w-full">Costos</p>
+            <article class="flex flex-col gap-2 relative mr-4 text-start">
+                <div class="text-white  max-w-[144px] text-start">
+                    <p>Ven a entrenar y platicamos de costos!</p>
+                </di>
+            </article>    
+        </article>
+        <article class=" mx-5 flex gap-4 lg:justify-end lg:mt-8 xl:mx-0">
+            <a aria-label="Enlace al facebook de Tigrillas" href="https://www.facebook.com/tigrillasflagfootball" class="p-2 bg-black opacity-80 text-white w-fit rounded-lg lg:h-fit">
+                <Facebook/>
+            </a>
+            <a aria-label="Enlace al whatsApp de Tigrillas" href="https://wa.me/16241740943/?text=Hola coach! Me gustaría ir a entrenar" class="p-2 bg-black opacity-80 text-white w-fit rounded-lg lg:h-fit">
+                <Whatsapp/>
+            </a>
+            <a aria-label="Enlace al instagram de Tigrillas" href="https://instagram.com/tigrillas_flag_football" class="p-2 bg-black opacity-80 text-white w-fit rounded-lg lg:h-fit">
+                <Instagram/>
+            </a>
+        </article>
+        
+    </div>
+    
+    <section class=" mt-16 w-full pb-4 relative z-40 text-white border-t-2 border-t-white max-w-screen-xl  mx-auto bg-opacity-90">
+        <div class="flex items-center justify-between mx-5 lg:m-0 flex-wrap pt-3">
+            <div class="flex items-center gap-2">
+                Creado en 
+                <span class="flex items-center gap-1  justify-center">
+                    <img src="flag.webp" class="w-7 rounded-sm" alt="Bandera mexicana">
+                </span>
+            </div>
+            <div class="flex gap-2 items-center relative z-50">
+                <a aria-label="Enlace a la página de la agencia" href="https://portfoliomichelle.netlify.app" class="text-sm text-ellipsis bg-black bg-opacity-60 p-2 px-3 font-semibold rounded-full opacity-90">michStudio</a>
+                <div class="flex items-center justify-center gap-2"> 
+                    <span class="text-white font-extrabold">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="red"  stroke="currentColor"  stroke-width="3"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-letter-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 4l10 16" /><path d="M17 4l-10 16" /></svg>
+                    </span>
+                    <p class="font- text-xs uppercase tracking-normal opacity-90">Tigrillas</p>
+                </div>
+            </div>
+        </div>    
+        <!-- <div class="h-32 w-56 rounded-full blur-[78px] bg-primary absolute  -right-36 md:-right-52"></div> -->
+    </section>
+</section>

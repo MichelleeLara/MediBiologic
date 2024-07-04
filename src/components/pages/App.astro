@@ -6,20 +6,26 @@ import Hero from '@/sections/Hero.astro';
 import Directory from '@/sections/Directory.astro';
 import AboutUs from '@/sections/AboutUs.astro';
 import Treatments from '@/sections/Treatments.astro'
-
+import WhyChose from '@/sections/WhyChose.astro';
+import PreFooter from '@/sections/PreFooter.astro';
+import Footer from '@/sections/Footer.astro';
 
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<NavBar/>
-	<main class="">
+	<main class="relative ">
 		<Hero/>
 		<Directory/>
 		<AboutUs/>
 		<Treatments/>
+		<WhyChose/>
+		<PreFooter/>
+		<Footer/>
 		<!-- <img src="gout.svg" class="absolute w-[40rem] h-[80rem] opacity-25 top-[60rem] right-[-13.9rem] rotate-[9.4deg]" alt=""> -->
 
+		<img src="/gout.svg" alt="" class="absolute top-[228rem] -z-10 right-0 w-[66rem]">
 		
 
 	</main>
