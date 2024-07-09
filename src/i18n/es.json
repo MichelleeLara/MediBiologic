@@ -49,7 +49,7 @@
         "ALT": "Decoración"
       }
     }
-  },
+	},
 	"Treatments_Section": {
 		"SECTION_SUBTITLE": "Intervenciones para la salud",
 		"SECTION_TITLE": "Diferentes tipos de tratamientos para una mejor calidad de vida",
@@ -88,5 +88,25 @@
 			"description": "Es parte de la medicina de rehabilitación celular para restablecer el equilibrio bioquímico del cuerpo. Nutrientes y otros elementos esenciales actúan como un sistema integrado; las enfermedades indican desequilibrios."
 		  }
 		]
-	  }
+	},
+	"Why_Choose_Us": {
+		"SUBTITLE": "Por qué elegirnos",
+		"TITLE": "Medicina Biológica para una Vida Plena",
+		"DESCRIPTION": "La medicina biológica abre nuevas posibilidades para su salud. Nos comprometemos a guiarle hacia una vida más saludable y plena.",
+		"FACTS": [
+		"Revitalizamos a tu organismo.",
+		"Terapia Neural para tratar patologías complejas.",
+		"Oncología integrativa con enfoque en reducción de efectos secundarios.",
+		"Cuidado integral del sistema inmunológico.",
+		"Tratamientos intravenosos de alta eficacia",
+		"Revitalizamos a tu organismo"
+		],
+		"CTA_TEXT": "Acerca sobre el médico"
+  	},
+	"CTA_Home" : {
+		"Subtitle" : "AGENDAR CITA AHORA",
+		"title" : "Revitalice su vida: Agende una cita hoy",
+		"button_primary" : "Agendar cita",
+		"button_secondary" : "Conocer terapias"
+	}
 }

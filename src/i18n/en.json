@@ -88,5 +88,25 @@
         "description": "It is part of cellular rehabilitation medicine to restore the body's biochemical balance. Nutrients and other essential elements act as an integrated system; diseases indicate imbalances."
       }
     ]
-  }
+  },
+  "Why_Choose_Us": {
+		"SUBTITLE": "Why choose us",
+		"TITLE": "Biological Medicine for a Full Life",
+		"DESCRIPTION": "Biological medicine opens new possibilities for your health. We are committed to guiding you towards a healthier and fuller life.",
+		"FACTS": [
+			"We revitalize your body.",
+			"Neural Therapy to treat complex pathologies.",
+			"Integrative oncology with a focus on reducing side effects.",
+			"Comprehensive care of the immune system.",
+			"Highly effective intravenous treatments.",
+			"We revitalize your body."
+		],
+		"CTA_TEXT": "About the doctor"
+	},
+	"CTA_Home": {
+		"Subtitle": "SCHEDULE AN APPOINTMENT NOW",
+		"title": "Revitalize your life: Schedule an appointment today",
+		"button_primary": "Schedule appointment",
+		"button_secondary": "Learn about therapies"
+	}
 }

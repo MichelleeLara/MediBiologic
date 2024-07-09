@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 
-import NavBar from '@/components/NavBar.astro';
+import NavBar from '@/components/NavBar'
 import Hero from '@/sections/Hero.astro';
 import Directory from '@/sections/Directory.astro';
 import AboutUs from '@/sections/AboutUs.astro';
@@ -9,13 +9,20 @@ import Treatments from '@/sections/Treatments.astro'
 import WhyChose from '@/sections/WhyChose.astro';
 import PreFooter from '@/sections/PreFooter.astro';
 import Footer from '@/sections/Footer.astro';
-
+import LanguageSelector from '../LanguageSelector.astro';
+const { url, currentLocale } = Astro;
 
 ---
 
 <Layout title="Welcome to Astro.">
-	<NavBar/>
+	<NavBar client:only />
 	<main class="relative ">
+		<div class="fixed right-5 top-3 z-[100]">
+			<LanguageSelector/>
+		</div>
+		<a href="#" class="absolute top-3 left-5 filter">
+			<img src="/logo_medicaBio.svg" class="w-52" alt="" style={{filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));'}} />
+		  </a>
 		<Hero/>
 		<Directory/>
 		<AboutUs/>
