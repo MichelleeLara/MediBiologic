@@ -1,7 +1,7 @@
 ---
 const {title} = Astro.props
 ---
-<div class="flex items-center gap-2">
+<div class="flex items-center gap-2 item-B">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#1c73b7" fill="none">
         <path d="M2.5 13.8333L6 17.5L7.02402 16.4272M16.5 6.5L10.437 12.8517" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M7.5 13.8333L11 17.5L21.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -10,3 +10,15 @@ const {title} = Astro.props
         {title}
     </p>
 </div>
+
+<script>
+    const sr = ScrollReveal({
+         origin: "top",
+         distance: "40px",
+         duration: 1e3,
+         delay: 400,
+     });
+     // ScrollReveal().reveal('.slide-up', slideUp);
+    //  sr.reveal(".slide-up", { duration: "1200" })
+    sr.reveal(".item-B", { interval:210 })    
+</script>

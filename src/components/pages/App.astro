@@ -15,9 +15,9 @@ const { url, currentLocale } = Astro;
 ---
 
 <Layout title="Welcome to Astro.">
-	<NavBar client:only />
+	<NavBar client:only currentLocale = {currentLocale}/>
 	<main class="relative ">
-		<div class="fixed right-5 top-3 z-[100]">
+		<div class="hidden lg:block fixed right-5 top-7 z-[100]">
 			<LanguageSelector/>
 		</div>
 		<a href="#" class="absolute top-3 left-5 filter">
@@ -32,7 +32,7 @@ const { url, currentLocale } = Astro;
 		<Footer/>
 		<!-- <img src="gout.svg" class="absolute w-[40rem] h-[80rem] opacity-25 top-[60rem] right-[-13.9rem] rotate-[9.4deg]" alt=""> -->
 
-		<img src="/gout.svg" alt="" class="absolute top-[228rem] -z-10 right-0 w-[66rem]">
+		<img src="/gout.svg" alt="" class="absolute top-[228rem] -z-[11] right-0 w-[66rem]">
 		
 
 	</main>

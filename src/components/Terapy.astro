@@ -3,7 +3,7 @@ const { icon: IconTerapy , nameTerapy, desc } = Astro.props
 ---
 
 
-<div class="bg-white relative overflow-hidden p-8 flex flex-col gap-3 w-full rounded-xl group cursor-pointer lg:min-w-[300px] lg:max-w-[300px]" style="box-shadow: 3px 0 20px 0 rgba(0, 0, 0, 0.1);">
+<div class="item-A bg-white relative overflow-hidden p-8 flex flex-col gap-3 w-full rounded-xl group cursor-pointer lg:min-w-[300px] lg:max-w-[300px]" style="box-shadow: 3px 0 20px 0 rgba(0, 0, 0, 0.1);">
     <div class="py-2 px-3 bg-tertiary bg-opacity-15 w-fit rounded-xl text-tertiary transition-all duration-200 group-hover:scale-110 group-hover:-translate-y-3">
         <IconTerapy/>
     </div>
@@ -20,3 +20,15 @@ const { icon: IconTerapy , nameTerapy, desc } = Astro.props
     </button>
     <img src="/cross_terapy.svg" alt="" class="absolute top-1 opacity-10 right-[.5rem] transition-all duration-300 group-hover:opacity-35">
 </div>
+
+<script>
+    const sr = ScrollReveal({
+         origin: "top",
+         distance: "40px",
+         duration: 2e3,
+         delay: 400,
+     });
+     // ScrollReveal().reveal('.slide-up', slideUp);
+    //  sr.reveal(".slide-up", { duration: "1200" })
+    sr.reveal(".item-A", { interval:180 })    
+</script>

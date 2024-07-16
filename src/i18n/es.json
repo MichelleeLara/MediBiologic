@@ -1,4 +1,28 @@
 {
+	"Navbar": {
+		"Inicio": "Inicio",
+		"Dr": "Dr. Dueñas",
+		"CelulasM": "Celulas madre",
+		"Terapias": "Terapias",
+		"Blog": "Blog"
+	},
+	"NavbarBlog": {
+		"ITEMS": [
+		{
+			"IMAGE": "/chelation.webp",
+			"IMAGE_ALT": "Imagen de tratamiento de quelación",
+			"TITLE": "Tramiento de quelación",
+			"DESCRIPTION": "Solución Integral para Enfermedades Cardiovasculares y la Eliminación de Metales Pesados"
+		},
+		{
+			"IMAGE": "/derma.svg",
+			"IMAGE_ALT": "Imagen de K-Laser Blue Derma",
+			"TITLE": "K-Laser Blue Derma",
+			"DESCRIPTION": "Innovación al servicio de innovación de tu salud dermatológica"
+		}
+		],
+		"VIEW_MORE": "Ver más"
+	},
 	"Home": {
 		"HERO_SUBTITLE": "Dr. Ricardo Dueñas",
 		"HERO_TITLE": "Medicina Biológica en Tijuana",

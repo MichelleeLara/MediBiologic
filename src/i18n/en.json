@@ -1,4 +1,28 @@
 {
+  "Navbar": {
+    "Inicio": "Home",
+    "Dr": "Dr. Dueñas",
+    "CelulasM": "Stem Cells",
+    "Terapias": "Therapies",
+    "Blog": "Blog"
+  },
+  "NavbarBlog": {
+    "ITEMS": [
+      {
+        "IMAGE": "/chelation.webp",
+        "IMAGE_ALT": "Chelation treatment image",
+        "TITLE": "Chelation Treatment",
+        "DESCRIPTION": "Comprehensive Solution for Cardiovascular Diseases and Heavy Metal Removal"
+      },
+      {
+        "IMAGE": "/derma.svg",
+        "IMAGE_ALT": "K-Laser Blue Derma image",
+        "TITLE": "K-Laser Blue Derma",
+        "DESCRIPTION": "Innovation at the Service of Your Dermatological Health"
+      }
+    ],
+    "VIEW_MORE": "View More"
+  },
 	"Home": {
 	"HERO_SUBTITLE": "Dr. Ricardo Dueñas",
 	"HERO_TITLE": "Biological Medicine in Tijuana",

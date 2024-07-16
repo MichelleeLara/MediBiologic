@@ -22,7 +22,20 @@ const i18n = getI18N({ currentLocale })
                 {i18n.CTA_Home.button_secondary}
             </a>
         </div>
-        <img src="/single_cross.svg" alt="" class="absolute w-[30rem] top-0 opacity-5 left-[-4rem] ">
-        <img src="/single_cross.svg" alt="" class="absolute w-[60rem] top-[-3rem] opacity-5 left-[62rem]">
+        <img src="/single_cross.svg" alt="" class="absolute w-[30rem] top-0 opacity-5 left-[-4rem] cross">
+        <img src="/single_cross.svg" alt="" class="absolute w-[60rem] top-[-3rem] opacity-5 left-[62rem] cross2">
     </div>
 </section>
+
+<script>
+    const sr = ScrollReveal({
+         origin: "top",
+         distance: "40px",
+         duration: 1e3,
+         delay: 400,
+     });
+     // ScrollReveal().reveal('.slide-up', slideUp);
+    //  sr.reveal(".slide-up", { duration: "1200" })
+    sr.reveal(".cross", { origin:"center"})    
+    sr.reveal(".cross2", { delay:800 })    
+</script>

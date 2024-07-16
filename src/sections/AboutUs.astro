@@ -7,7 +7,7 @@ const i18n = getI18N({ currentLocale })
 ---
 <section class="h-min flex items-center justify-center relative ">
     <div class="mx-5 max-w-screen-xl w-full flex gap-16 flex-col md:flex-row ">
-        <article class="flex gap-6 flex-col max-w-[600px]">
+        <article class="flex gap-6 flex-col max-w-[600px] slide-left2">
             <p class="font-semibold text-tertiary">{i18n.About_Section.SUBTITLE}</p>
             <h2 class="text-4xl font-semibold">{i18n.About_Section.TITLE}</h2>
             <p class="text-gray-600">{i18n.About_Section.DESCRIPTION}</p>
@@ -47,9 +47,27 @@ const i18n = getI18N({ currentLocale })
             </div>
         </article>
         <div class="relative bg-resd-50 flex items-center justify-center ">
-            <img src={i18n.About_Section.IMAGES.DOCTOR.SRC} alt={i18n.About_Section.IMAGES.DOCTOR.ALT} class="w-[20rem] hidden md:block relative rounded-tr-[5rem] md:w-[25rem] shadow-md lg:w-3/4 lg:right[0rem] md:max-w-[230px] lg:max-w-full xl:right-[-8rem]">
-            <img src={i18n.About_Section.IMAGES.GLOVES.SRC} alt={i18n.About_Section.IMAGES.GLOVES.ALT} class="w-[18rem] md:absolute md:left-[-7rem] rounded-bl-[5rem] md:top-64 rounded-md md:w-[20rem] shadow-lg lg:left-[-4rem] lg:top-48 xl:left-[4rem]">
+            <img src={i18n.About_Section.IMAGES.DOCTOR.SRC} alt={i18n.About_Section.IMAGES.DOCTOR.ALT} class="w-[20rem] hidden md:block relative rounded-tr-[5rem] md:w-[25rem] shadow-md lg:w-3/4 lg:right[0rem] md:max-w-[230px] lg:max-w-full xl:right-[-8rem] img_about">
+            <img src={i18n.About_Section.IMAGES.GLOVES.SRC} alt={i18n.About_Section.IMAGES.GLOVES.ALT} class="w-[18rem] md:absolute md:left-[-7rem] rounded-bl-[5rem] md:top-64 rounded-md md:w-[20rem] shadow-lg lg:left-[-4rem] lg:top-48 xl:left-[4rem] img_about2">
         </div>
     </div>
     <img src={i18n.About_Section.IMAGES.GOUT.SRC} alt={i18n.About_Section.IMAGES.GOUT.ALT} class="w-[50rem] absolute left-0 rotate-180 top-8 -z-10">
 </section>
+
+
+<script>
+import { delay } from "framer-motion";
+
+    const sr = ScrollReveal({
+         origin: "left",
+         distance: "40px",
+         duration: 2e3,
+         delay: 400,
+     });
+     // ScrollReveal().reveal('.slide-up', slideUp);
+    //  sr.reveal(".slide-up", { duration: "1200" })
+     sr.reveal(".slide-left2", { duration: "1200"})
+    sr.reveal(".img_about", { duration: "1200" , delay:500, origin:"right" })
+    sr.reveal(".img_about2", { duration: "1200" , delay:900, origin:"right" })
+
+ </script>

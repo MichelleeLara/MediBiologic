@@ -4,7 +4,7 @@ import { getI18N } from "@/i18n/"
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
-<section class="bg-[#f3f8ff] h-min relative overflow-hidden flex flex-col gap-20 -top-52 px-8 py-10 rounded-[2.5rem] mx-6 max-md:mx-12 md:flex-row md:-top-44">
+<section class="bg-[#f3f8ff] slide-up h-min relative overflow-hidden flex flex-col gap-20 -top-52 px-8 py-10 rounded-[2.5rem] mx-6 max-md:mx-12 md:flex-row md:-top-44">
     <div class="flex flex-col gap-1.5 md:w-[53.33%]">
         <strong class="text-tertiary font-inter mb-2">
             {i18n.Home_Directory.DIRECTORY_SUBTITLE}
@@ -53,6 +53,20 @@ const i18n = getI18N({ currentLocale })
         </a>
 
     </div>
-    <img src="/cross3.svg" class="absolute left-[-1rem] bottom-[-3rem] w-[30rem] opacity-[0.06]" alt="">
-    <img src="/cross3.svg" class="absolute left-[29.5rem] bottom-[-4rem] w-[20rem] opacity-[0.06]" alt="">
+    <img src="/cross3.svg" class="absolute left-[-1rem] bottom-[-3rem] w-[30rem] opacity-[0.06] slide-left" alt="">
+    <img src="/cross3.svg" class="absolute left-[29.5rem] bottom-[-4rem] w-[20rem] opacity-[0.06] slide-left" alt="">
 </section>
+
+
+
+<script>
+    const sr = ScrollReveal({
+         origin: "bottom",
+         distance: "40px",
+         duration: 2e3,
+         delay: 400,
+     });
+     // ScrollReveal().reveal('.slide-up', slideUp);
+     sr.reveal(".slide-up", { duration: "1200" })
+     sr.reveal(".slide-left", { duration: "1200", delay:570})
+ </script>
