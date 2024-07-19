@@ -15,7 +15,7 @@ const { url, currentLocale } = Astro;
 ---
 
 <Layout title="Welcome to Astro.">
-	<NavBar client:only currentLocale = {currentLocale}/>
+	<NavBar client:only="react" currentLocale = {currentLocale}/>
 	<main class="relative ">
 		<div class="hidden lg:block fixed right-5 top-7 z-[100]">
 			<LanguageSelector/>
