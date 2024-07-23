@@ -1,16 +1,18 @@
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { getI18N } from "@/i18n/"
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
 
 
-function App({currentLocale}) {
+function App({currentLocale, url}) {
+  console.log('aaaa2a', url)
   return (
     <>
     <div className="hidden lg:block">
       {/* <Nav /> */}
     </div>
     <div className="bg-red-50 flex items-center justify-center">
-      <Tabs currentLocale={currentLocale} />
+      <Tabs currentLocale={currentLocale} url={url} />
     </div>
     
     </>
@@ -62,7 +64,7 @@ const Nav = () => {
 
 
 
-const Tabs = ({currentLocale}) => {
+const Tabs = ({currentLocale, url}) => {
   const [selected, setSelected] = useState(null);
   const [dir, setDir] = useState(null);
   const [isHidden, setIsHidden] = useState(false);
@@ -88,6 +90,13 @@ const Tabs = ({currentLocale}) => {
     setSelected(val);
   };
 
+  console.log('000', url)
+
+    
+  const lang = getLangFromUrl(url);
+  const t = useTranslations(lang);
+  const translatePath = useTranslatedPath(lang);
+
   return (
     <motion.div
       animate={isHidden ? "hidden" : "visible"}
@@ -108,7 +117,7 @@ const Tabs = ({currentLocale}) => {
         onMouseLeave={() => handleSetSelected(null)}
         className="relative flex h-fit gap-2 bg-white py-3 px-6 rounded-full shadow-xl"
       >
-        <a data-astro-reload href="/" onMouseEnter={() => handleSetSelected(null)} className="flex items-center gap-1  text-sm  bg-white rounded-3xl border border-gray-200 px-7 py-2 transition-colors duration-300 hover:bg-gray-200 focus-visible:bg-gray-200">
+        <a   href={translatePath('/')} onMouseEnter={() => handleSetSelected(null)} className="flex items-center gap-1  text-sm  bg-white rounded-3xl border border-gray-200 px-7 py-2 transition-colors duration-300 hover:bg-gray-200 focus-visible:bg-gray-200">
           {i18n.Navbar.Inicio}
         </a>
         <a href="/doctor-dueñas" onMouseEnter={() => handleSetSelected(null)} className="flex items-center gap-1  text-sm  bg-white rounded-3xl border border-gray-200 px-7 py-2 transition-colors duration-300 hover:bg-gray-200 focus-visible:bg-gray-200">
@@ -131,7 +140,7 @@ const Tabs = ({currentLocale}) => {
         })}
 
         <AnimatePresence>
-          {selected && <Content dir={dir} selected={selected} currentLocale={currentLocale} />}
+          {selected && <Content dir={dir} selected={selected} currentLocale={currentLocale} url={url} />}
         </AnimatePresence>
       </div>
     </motion.div>
@@ -163,7 +172,7 @@ const Tab = ({ children, tab, handleSetSelected, selected }) => {
   );
 };
 
-const Content = ({ selected, dir, currentLocale }) => {
+const Content = ({ selected, dir, currentLocale, url }) => {
   const TABS = getTABS(currentLocale);
   return (
     <motion.div
@@ -197,7 +206,7 @@ const Content = ({ selected, dir, currentLocale }) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.25, ease: "easeInOut" }}
               >
-                <t.Component currentLocale={currentLocale} />
+                <t.Component currentLocale={currentLocale} url={url}/>
               </motion.div>
             )}
           </div>

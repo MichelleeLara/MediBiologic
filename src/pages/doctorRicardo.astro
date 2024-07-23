@@ -2,31 +2,37 @@
 import Layout from "@/layouts/Layout.astro";
 import Navbar from '@/components/NavBar.jsx'
 import LanguageSelector from "@/components/LanguageSelector.astro";
-const { url, currentLocale } = Astro;
+import Post from "@/components/Post.astro";
+import PreFooter from "@/sections/PreFooter.astro";
+import Footer from "@/sections/Footer.astro";
+const { currentLocale } = Astro;
+
+const url = Astro.url
 ---
 
 <Layout title="Welcome to Astro.">
-	<Navbar client:only="react" currentLocale = {currentLocale}/>
+    <Navbar client:only="react" currentLocale = {currentLocale} url={url}/>
 	<main class="relative ">
 		<div class="hidden lg:block fixed right-5 top-7 z-[100]">
 			<LanguageSelector/>
 		</div>
-		<a href="#" class="absolute top-3 left-5 filter">
+		<a href="#" class="absolute top-3 left-5 filter z-[5]">
 			<img src="/logo_medicaBio.svg" class="w-52" alt="" style={{filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));'}} />
 		</a>
 
-        <section class="bg-[#13182f] pt-40 max-h-72 rounded-bl-[2.1rem] rounded-br-[2.1rem] flex justify-center w-full">
-            <div class=" mx-7 max-w-screen-xl  flex flex-col md:flex-row h-min w-full relative top-[-2rem] gap-10">
-                <article class="bg-gray-100 rounded-3xl flex flex-col items-center justify-center relative top-[0rem] w-full shadow-lg pb-40">
-                    <div class="bg-[#1c73b7] h-40 py-20 w-full rounded-tr-3xl rounded-tl-3xl relative overflow-hidden">
+        <section class="pt-40 h-min flex justify-center w-full">
+            <div class="w-full bg-[#13182f] pt-40  rounded-bl-[2.1rem] rounded-br-[2.1rem] min-h-72 max-h-72 top-0 absolute"></div>
+            <div class=" mx-7 max-w-screen-xl b  flex flex-col md:flex-row  w-full relative top-[-2rem] gap-10">
+                <article class="flex flex-col items-center justify-center relative top-[0rem] w-full">
+                    <div class="bg-[#1c73b7] h-40 z-[3] py-20 w-full rounded-tr-3xl rounded-tl-3xl relative overflow-hidden">
                         <img src="/single_cross.svg" alt="" class="absolute w-[20rem] top-[-11rem] opacity-5 left-[-4rem] ">
                         <img src="/single_cross.svg" alt="" class="absolute w-[20rem] top-[1rem] opacity-5 right-[-5rem]">
-                        <img src="/single_cross.svg" alt="" class="absolute w-[20rem] opacity-5 right-[35rem] top-[.3rem]">
+                        <!-- <img src="/single_cross.svg" alt="" class="absolute w-[20rem] opacity-5 right-[35rem] top-[.3rem]"> -->
                     </div>
-                    <div class="relative -top-28 w-full px-5 flex flex-col gap-4 ">
+                    <div class="relative -top-28 bg-gray-100 pb-14 rounded-3xl w-full px-10 flex flex-col gap-4 ">
                         <header class="flex flex-col items-center gap-5 md:flex-row md:items-end md:gap-5">
-                            <div class="flex items-start justify-start h-full">
-                                <img src="/DrDueñas.svg"  alt="" class="w-72 bg-gray-100 rounded-full  shadow-md  border-white border-[5px]">
+                            <div class="flex items-start justify-start h-full relative z-[5]">
+                                <img src="/DrDueñas.svg"  alt="" class="w-64 bg-gray-100 rounded-full  shadow-md  border-white border-[5px]">
                             </div>
 
                             <div class="flex flex-col gap-4 items-start md:mt-32 w-full">
@@ -60,11 +66,17 @@ const { url, currentLocale } = Astro;
                         
                         <h2 class="text-start text-2xl font-semibold">Experiencia</h2>
                         <p class="text-gray-700 text-balance">Soy egresado de la carrera de Medicina de la Universidad Autónoma de Nuevo León (1984-1991) con más de 30 años de experiencia en medicina integrativa.</p>
-                        <ul class="list-disc mx-10">
+                        <ul class="list-disc mx-10 text-gray-700">
                             <li>paps</li>
                             <li>paps</li>
                             <li>paps</li>
                         </ul>
+                        
+                        <hr class="w-full mt-8">
+                        
+                        <h2 class="text-start text-2xl font-semibold">Credenciales</h2>
+                        <p class="text-gray-700 text-balance">Soy egresado de la carrera de Medicina de la Universidad Autónoma de Nuevo León (1984-1991) con más de 30 años de experiencia en medicina integrativa.</p>
+                        <p class="text-gray-700 text-balance mt-10">Permiso de cofrepris _ 11221</p>
 
                     </div>
                 </article>
@@ -99,7 +111,46 @@ const { url, currentLocale } = Astro;
                     </div>
                 </article>
             </div>
+            
         </section>
+
+        <section class="flex items-center justify-center w-full pb-32">
+            <div class="mx-7 max-w-screen-xl w-full flex flex-col gap-8">
+                <header>
+                    <h2 class="text-start text-3xl font-semibold">Articulos escritos por Dr. Ricardo</h2>
+                    <a href="">Ver todos los artículos</a>
+                </header>
+
+                <div class="grid gap-10 place-content-center md:grid-cols-2 lg:grid-cols-3">
+                    <Post 
+                        title="Quelación: Solución Eficaz para Enfermedad Cardiovascular y Desintoxicación" 
+                        desc="Tratamiento natural que mejora la salud arterial y elimina metales pesados del cuerpo."
+                        url="/chelation.svg"
+                        category="Quelación"
+                        date="julio 22, 2023"
+                    />
+                    <Post 
+                        title="Tratamiento K-Laser Blue Derma: Innovación en Terapias Dermatológicas" 
+                        desc="Avanzada terapia láser para mejorar diversas condiciones de la piel."
+                        url="/derma.svg"
+                        category="Dematología"
+                        date="julio 22, 2023"
+                    />
+                    <Post 
+                        title="Tratamiento Biológico Integral del Cáncer: Desintoxicación, Nutrición y Apoyo Emocional" 
+                        desc="Enfoque integral que combina desintoxicación, nutrición y apoyo emocional."
+                        url="/biologicalTreatment.svg"
+                        category="Medicina Biológica"
+                        date="julio 22, 2023"
+                    />
+           
+
+                </div>
+            </div>
+        </section>
+		<PreFooter/>
+		<Footer/>
+
 		
 		<!-- <img src="gout.svg" class="absolute w-[40rem] h-[80rem] opacity-25 top-[60rem] right-[-13.9rem] rotate-[9.4deg]" alt=""> -->
 

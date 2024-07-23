@@ -10,19 +10,29 @@ import WhyChose from '@/sections/WhyChose.astro';
 import PreFooter from '@/sections/PreFooter.astro';
 import Footer from '@/sections/Footer.astro';
 import LanguageSelector from '../LanguageSelector.astro';
-const { url, currentLocale } = Astro;
+import { getI18N } from '@/i18n';
+import { getLangFromUrl, useTranslatedPath, useTranslations } from '@/i18n/utils';
+// const { url, currentLocale } = Astro;
 
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+const url = Astro.url
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+console.log('????????', url)
 ---
 
 <Layout title="Welcome to Astro.">
-	<NavBar client:only="react" currentLocale = {currentLocale}/>
+	<NavBar client:only="react" currentLocale = {currentLocale} url={url}/>
 	<main class="relative ">
 		<div class="hidden lg:block fixed right-5 top-7 z-[100]">
 			<LanguageSelector/>
 		</div>
-		<a href="#" class="absolute top-3 left-5 filter">
-			<img src="/logo_medicaBio.svg" class="w-52" alt="" style={{filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));'}} />
-		  </a>
+		<a href={translatePath('/')} class="absolute top-3 left-5 filter z-[100] cursor-pointer">
+			<img src="/logo_medicaBio.svg" class="w-52 cursor-pointers relative z-[100]" alt="" style={{filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));'}} />
+		</a>
 		<Hero/>
 		<Directory/>
 		<AboutUs/>
