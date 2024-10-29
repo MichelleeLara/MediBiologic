@@ -12,6 +12,7 @@ import Footer from '@/sections/Footer.astro';
 import LanguageSelector from '../LanguageSelector.astro';
 import { getI18N } from '@/i18n';
 import { getLangFromUrl, useTranslatedPath, useTranslations } from '@/i18n/utils';
+import NavBarMobile from '../NavBarMobile';
 // const { url, currentLocale } = Astro;
 
 const { currentLocale } = Astro
@@ -25,14 +26,18 @@ console.log('????????', url)
 ---
 
 <Layout title="Welcome to Astro.">
-	<NavBar client:only="react" currentLocale = {currentLocale} url={url}/>
+	<div class="hidden sm:block">
+		<NavBar client:only="react" currentLocale = {currentLocale} url={url}/>
+	</div>
 	<main class="relative ">
 		<div class="hidden lg:block fixed right-5 top-7 z-[100]">
 			<LanguageSelector/>
 		</div>
-		<a href={translatePath('/')} class="absolute top-3 left-5 filter z-[100] cursor-pointer">
-			<img src="/logo_medicaBio.svg" class="w-52 cursor-pointers relative z-[100]" alt="" style={{filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));'}} />
+		<a href={translatePath('/')} class="absolute top-3 left-5 filter z-[2] cursor-pointer sm:hidden lg:block">
+			<img src="/logo_medicaBio.svg" class="w-52 cursor-pointers relative z-[80]" alt="" style={{filter: 'drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));'}} />
 		</a>
+
+		<NavBarMobile client:only="react" />
 		<Hero/>
 		<Directory/>
 		<AboutUs/>

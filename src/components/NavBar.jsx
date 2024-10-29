@@ -5,7 +5,6 @@ import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils
 
 
 function App({currentLocale, url}) {
-  console.log('aaaa2a', url)
   return (
     <>
     <div className="hidden lg:block">
@@ -35,31 +34,7 @@ const Nav = () => {
     }
   });
 
-  return (
-    <motion.div
-      animate={isHidden ? "hidden" : "visible"}
-      whileHover="visible"
-      onFocusCapture={() => setIsHidden(false)}
-      variants={{
-        hidden: {
-          y: "-90%",
-        },
-        visible: {
-          y: "0%",
-        },
-      }}
-      transition={{ duration: 0.2 }}
-      className="hidden fixed top-0 z-10 sm:flex w-full justify-center pt-3"
-    >
-        
-      <nav className="flex justify-between gap-3 rounded-3xl shadow-lg z-[1000] bg-white py-2.5 px-5 ">
-        <a href="#" className="rounded-3xl border border-gray-200 px-7 py-2 transition-colors duration-300 hover:bg-gray-200 focus-visible:bg-gray-200">Products</a>
-        <a href="#" className="rounded-3xl border border-gray-200 px-7 py-2 transition-colors duration-300 hover:bg-gray-200 focus-visible:bg-gray-200">Services</a>
-        <a href="#" className="rounded-3xl border border-gray-200 px-7 py-2 transition-colors duration-300 hover:bg-gray-200 focus-visible:bg-gray-200">About</a>
-        <a href="#" className="rounded-3xl border border-gray-200 px-7 py-2 transition-colors duration-300 hover:bg-gray-200 focus-visible:bg-gray-200">Contact</a>
-      </nav>
-    </motion.div>
-  );
+
 };
 
 
@@ -115,7 +90,7 @@ const Tabs = ({currentLocale, url}) => {
     >
       <div
         onMouseLeave={() => handleSetSelected(null)}
-        className="relative flex h-fit gap-2 bg-white py-3 px-6 rounded-full shadow-xl"
+        className="relative flex h-fit gap-2 bg-white py-3 px-6 rounded-full shadow-xl z-[100]"
       >
         <a   href={translatePath('/')} onMouseEnter={() => handleSetSelected(null)} className="flex items-center gap-1  text-sm  bg-white rounded-3xl border border-gray-200 px-7 py-2 transition-colors duration-300 hover:bg-gray-200 focus-visible:bg-gray-200">
           {i18n.Navbar.Inicio}

@@ -1,16 +1,13 @@
 ---
 import Terapy from "@/components/Terapy.astro";
-import EUAFlag from "@/components/icons/EUA_flag.astro";
-import Icon_Terapy from '@/components/icons/Icon_Terapy.astro'
-import Icon_Ozono from '@/components/icons/Icon_Ozono.astro'
 import CtaPrimary from "@/components/Cta_primary.astro"
 import { getI18N } from "@/i18n/"
-import OrtoMedic from '@/components/icons/OrtoMedic.astro'
 import Serum from "@/components/icons/Serum.astro";
 import Vitamin from "@/components/icons/Vitamin.astro";
 import Intra from "@/components/icons/Intra.astro";
 import Oncology from "@/components/icons/Oncology.astro";
-
+import OrtoMedic from '@/components/icons/OrtoMedic.astro'
+import Icon_Terapy from '@/components/icons/Icon_Terapy.astro'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
@@ -24,13 +21,13 @@ const IconMap = {
     "Oncología integrativa": Oncology,
     "Inmunoterapia autologa": Serum,
     "Medicina ortomolecular": OrtoMedic,
-
 }
+
+const treatments = i18n.Treatments_Section.TREATMENTS;
 ---
 
 <section class="h-min flex items-center justify-center relative py-[230px] lg:pt-[300px]">
     <div class="mx-5 max-w-screen-xl w-full flex flex-col gap-10 md:flex-row">
-        
         <div class="flex flex-col gap-3 wfu md:w-5/6 h-fit md:sticky top-12 transition-all">
             <p class="font-semibold text-tertiary">{i18n.Treatments_Section.SECTION_SUBTITLE}</p>
             <h2 class="text-4xl font-semibold">{i18n.Treatments_Section.SECTION_TITLE}</h2>
@@ -41,22 +38,28 @@ const IconMap = {
             <div class="w-full flex items-center justify-center">
                 <img src="/DrDueñas.svg" alt="" class="w-[22rem]" style={{ maskImage:'linear-gradient(black 55%, transparent 94%)' }}>
             </div>
-        
         </div>
         <div class="flex w-full flex-col gap-9 lg:flex-row">
-            <article class="flex flex-col gap-9 ">
-                {i18n.Treatments_Section.TREATMENTS.slice(0, 4).map((treatment) => (
-                    <Terapy  icon={IconMap[treatment.name]  || Icon_Terapy}  nameTerapy={treatment.name} desc={treatment.description}/>
+            <article class="flex flex-col gap-9">
+                {treatments.slice(0, 4).map((treatment) => (
+                    <Terapy 
+                        icon={IconMap[treatment.name] || Icon_Terapy} 
+                        nameTerapy={treatment.name} 
+                        desc={treatment.description}
+                        href={`/${treatment.name.toLowerCase().replace(/ /g, '-')}`}
+                    />
                 ))}
             </article>
             <article class="hidden md:flex flex-col gap-9 lg:mt-24">
-                {i18n.Treatments_Section.TREATMENTS.slice(4).map((treatment) => (
-                    <Terapy  icon={IconMap[treatment.name] || Icon_Terapy}  nameTerapy={treatment.name} desc={treatment.description}/>
-                    // <Terapy icon={Icon_Terapy} nameTerapy={treatment.name} desc={treatment.description}/>
+                {treatments.slice(4).map((treatment) => (
+                    <Terapy 
+                        icon={IconMap[treatment.name] || Icon_Terapy} 
+                        nameTerapy={treatment.name} 
+                        desc={treatment.description}
+                        href={`/${treatment.name.toLowerCase().replace(/ /g, '-')}`}
+                    />
                 ))}
             </article>
         </div>
     </div>
 </section>
-
-

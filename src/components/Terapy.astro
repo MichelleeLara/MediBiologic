@@ -1,11 +1,10 @@
 ---
-const { icon: IconTerapy , nameTerapy, desc } = Astro.props
+const { icon: Icon, nameTerapy, desc, href } = Astro.props;
+console.log(href)
 ---
-
-
-<div class="item-A bg-white relative overflow-hidden p-8 flex flex-col gap-3 w-full rounded-xl group cursor-pointer lg:min-w-[300px] lg:max-w-[300px]" style="box-shadow: 3px 0 20px 0 rgba(0, 0, 0, 0.1);">
+<a href={href} class="item-A bg-white relative overflow-hidden p-8 flex flex-col gap-3 w-full rounded-xl group cursor-pointer lg:min-w-[300px] lg:max-w-[300px]" style="box-shadow: 3px 0 20px 0 rgba(0, 0, 0, 0.1);">
     <div class="py-2 px-3 bg-tertiary bg-opacity-15 w-fit rounded-xl text-tertiary transition-all duration-200 group-hover:scale-110 group-hover:-translate-y-3">
-        <IconTerapy/>
+        <Icon/>
     </div>
     <h3 class="text-xl font-semibold transition-all duration-500 group-hover:text-tertiary">{nameTerapy}</h3>
     <p class="text-gray-600">{desc}</p>
@@ -19,7 +18,7 @@ const { icon: IconTerapy , nameTerapy, desc } = Astro.props
         </span>
     </button>
     <img src="/cross_terapy.svg" alt="" class="absolute top-1 opacity-10 right-[.5rem] transition-all duration-300 group-hover:opacity-35">
-</div>
+</a>
 
 <script>
     const sr = ScrollReveal({
@@ -31,4 +30,9 @@ const { icon: IconTerapy , nameTerapy, desc } = Astro.props
      // ScrollReveal().reveal('.slide-up', slideUp);
     //  sr.reveal(".slide-up", { duration: "1200" })
     sr.reveal(".item-A", { interval:180 })    
+
+
+function ScrollReveal(arg0: { origin: string; distance: string; duration: number; delay: number; }) {
+throw new Error("Function not implemented.");
+}
 </script>

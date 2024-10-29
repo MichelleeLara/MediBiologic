@@ -1,0 +1,110 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import NavBar from '@/components/NavBar'
+import PreFooter from '@/sections/PreFooter.astro';
+import Footer from '@/sections/Footer.astro';
+import CtaPrimary from '@/components/Cta_primary.astro';
+import { getI18N } from '@/i18n';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import Serum from "@/components/icons/Serum.astro";
+import Vitamin from "@/components/icons/Vitamin.astro";
+import Intra from "@/components/icons/Intra.astro";
+import Oncology from "@/components/icons/Oncology.astro";
+import OrtoMedic from '@/components/icons/OrtoMedic.astro'
+import Icon_Terapy from '@/components/icons/Icon_Terapy.astro'
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const locales = ['es', 'en']; // Ajusta esto según tus idiomas soportados
+  
+  return locales.flatMap(locale => {
+    const i18n = getI18N({ currentLocale: locale });
+    return i18n.Treatments_Section.TREATMENTS.map((treatment) => ({
+      params: { 
+        specialization: treatment.name.toLowerCase().replace(/ /g, '-'),
+        lang: locale 
+      },
+      props: { treatment, locale },
+    }));
+  });
+}
+
+const { specialization } = Astro.params;
+const { treatment, locale } = Astro.props;
+const i18n = getI18N({ currentLocale: locale });
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+if (!treatment) {
+  return Astro.redirect('/404'); // Asegúrate de tener una página 404
+}
+
+const IconMap = {
+    'Terapia de Quelación' : Steerum,
+    "Ozonoterapia": Serum,
+    "Terapia vitamínica intravenosa": Intra,
+    "Infusión de Vitamina C": Vitamin,
+    "Terapia Neural": Intra,
+    "Oncología integrativa": Oncology,
+    "Inmunoterapia autologa": Serum,
+    "Medicina ortomolecular": OrtoMedic,
+};
+
+const IconComponent = IconMap[treatment.name] || 'Icon_Terapy';
+console.log('111,', IconComponent)
+---
+
+<Layout title={`${treatment.name} | Your Clinic Name`}>
+  <NavBar client:only="react" currentLocale={locale} url={Astro.url}/>
+  <main class="relative">
+    <section class="h-min flex items-center justify-center relative pt-40">
+      <div class="mx-5 max-w-screen-xl w-full flex gap-16 flex-col">
+        <!-- Header info -->
+        <article class="flex gap-6 flex-col justify-between max-w-[600px] slide-left2">
+          <div class="flex items-start gap-4 flex-col md:flex-row md:items-center">
+            <p class="font-semibold text-tertiary"><IconComponent/></p>
+            <h2 class="text-4xl font-bold md:text-6xl">{treatment.name}</h2>
+          </div>
+          <p class="text-gray-600">{treatment.description}</p>
+          <div class="text-white mt-4 md:w-fit">
+            <CtaPrimary color="#1c73b7"/>
+          </div>
+        </article>
+        <!-- Image -->
+        <div class="relative bg-resd-50 flex items-center justify-center">
+          <img src={i18n.About_Section.IMAGES.DOCTOR.SRC} alt={i18n.About_Section.IMAGES.DOCTOR.ALT} class="w-full h-72 object-cover rounded-2xl">
+        </div>
+        <!-- Details of therapy -->
+        <div class="flex flex-col gap-3">
+          <h2 class="text-3xl font-bold">Descripción de {treatment.name}</h2>
+          <p class="text-gray-600">{treatment.longDescription || "Descripción detallada de la terapia no disponible."}</p>
+        </div>
+        <!-- More specialties -->
+        <div class="flex flex-col gap-3">
+          <div class="flex items-start gap-4 w-full justify-between flex-col md:flex-row md:items-center">
+            <h2 class="text-3xl font-bold">Más especialidades</h2>
+            <div class="text-white">
+              <CtaPrimary color="#1c73b7"/>
+            </div>
+          </div>
+          <article class="grid grid-cols-1 mt-8 gap-5 md:grid-cols-2">
+            {i18n.Treatments_Section.TREATMENTS.slice(0, 4)
+              .filter(t => t.name !== treatment.name)
+              .map((t) => (
+                <div class="flex items-center justify-center w-full flex-col gap-2 border-2 border-gray-200 py-6 px-20 rounded-2xl">
+                  <p><IconComponent/></p>
+                  <h3 class="text-xl font-bold">{t.name}</h3>
+                  <p class="text-gray-600 text-center">{t.description}</p>
+                </div>
+              ))
+            }
+          </article>
+        </div>
+      </div>
+      <img src={i18n.About_Section.IMAGES.GOUT.SRC} alt={i18n.About_Section.IMAGES.GOUT.ALT} class="w-[50rem] absolute left-0 rotate-180 top-8 -z-10">
+    </section>
+    <PreFooter/>
+    <Footer/>
+  </main>
+</Layout>
