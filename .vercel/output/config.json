@@ -13,19 +13,19 @@
 		},
 		{
 			"src": "^\\/_image$",
-			"dest": "_render"
+			"dest": "/"
 		},
 		{
 			"src": "^\\/doctorRicardo\\/?$",
-			"dest": "_render"
+			"dest": "/"
 		},
 		{
 			"src": "^\\/en\\/doctorRicardo\\/?$",
-			"dest": "_render"
+			"dest": "/"
 		},
 		{
 			"src": "^\\/en\\/?$",
-			"dest": "_render"
+				"dest": "/"
 		},
 		{
 			"src": "^\\/$",
