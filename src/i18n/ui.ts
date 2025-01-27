@@ -31,7 +31,7 @@ export const ui = {
 		'nav.archivo': 'Archivo',
 		// 'nav.doctor': 'doctor dueñas',
 		'nav.privacidad': 'Privacidad',
-		'nav.cookies': 'Cookies',
+		// 'nav.cookies': 'Cookies',
 	},
 	en: {
 		'nav.inicio': 'Home',
@@ -40,7 +40,7 @@ export const ui = {
 		'nav.archivo': 'Archive',
 		// 'nav.doctor': 'doctor dueñas',
 		'nav.privacidad': 'Privacy',
-		'nav.cookies': 'Cookies',
+		// 'nav.cookies': 'Cookies',
 	},
 } as const;
 
@@ -52,7 +52,7 @@ export const routes = {
 		doctorRicardo: 'doctorRicardo',
 		'doctor-dueñas': 'doctor-dueñas',
 		privacidad: 'privacidad',
-		cookies: 'cookies',
+		// cookies: 'cookies',
 	},
 	en: {
 		vota: 'vote',
@@ -61,6 +61,6 @@ export const routes = {
 		archivo: 'archive',
 		'doctor-dueñas': 'doctor-dueñas',
 		privacidad: 'privacy',
-		cookies: 'cookies',
+		// cookies: 'cookies',
 	},
 };
