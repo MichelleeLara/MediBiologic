@@ -18,7 +18,7 @@ export const prerender = true;
 export async function getStaticPaths() {
   const locales = ['es', 'en']; // Ajusta esto según tus idiomas soportados
   
-  return locales.flatMap(locale => {
+   locales.flatMap(locale => {
     const i18n = getI18N({ currentLocale: locale });
     return i18n.Treatments_Section.TREATMENTS.map((treatment) => ({
       params: { 
@@ -28,6 +28,21 @@ export async function getStaticPaths() {
       props: { treatment, locale },
     }));
   });
+
+  const paths = locales.flatMap(locale => {
+    const i18n = getI18N({ currentLocale: locale });
+    console.log('TREATMENTS:', i18n.Treatments_Section.TREATMENTS); // Agregar esto
+    return i18n.Treatments_Section.TREATMENTS.map((treatment) => ({
+      params: { 
+        specialization: treatment.name.toLowerCase().replace(/ /g, '-'),
+        lang: locale 
+      },
+      props: { treatment, locale },
+    }));
+  });
+
+  console.log('Generated Paths:', paths);
+  return paths;
 }
 
 const { specialization } = Astro.params;
@@ -37,8 +52,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 if (!treatment) {
-  return Astro.redirect('/404'); // Asegúrate de tener una página 404
+  return Astro.redirect('/402'); // Asegúrate de tener una página 404
 }
+
+
 
 const IconMap = {
     'Terapia de Quelación' : Serum,
