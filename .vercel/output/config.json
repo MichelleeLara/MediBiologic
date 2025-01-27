@@ -12,24 +12,21 @@
 			"handle": "filesystem"
 		},
 		{
-			"src": "^\\/_image$",
-			"dest": "/"
-		},
-		{
 			"src": "^\\/doctorRicardo\\/?$",
-			"dest": "/"
+			"dest": "/doctorRicardo"
 		},
 		{
 			"src": "^\\/en\\/doctorRicardo\\/?$",
-			"dest": "/"
+			"dest": "/en/doctorRicardo"
 		},
 		{
 			"src": "^\\/en\\/?$",
-				"dest": "/"
+			"dest": "/en"
 		},
 		{
 			"src": "^\\/$",
 			"dest": "/"
 		}
+		
 	]
 }
