@@ -1,5 +1,6 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
-    ]
+  "rewrites": [
+    { "source": "/es/terapia-de-quelación", "destination": "/es/terapia-de-quelación.html" },
+    { "source": "/en/chelation-therapy", "destination": "/en/chelation-therapy.html" }
+  ]
 }
